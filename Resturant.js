@@ -9,8 +9,8 @@ const ResturantSchema = new mongoose.Schema({
     cuisines : [String],
     city: {
         type : String, 
-        required : [true, 'provide city name']
-        loweercase : 
+        required : [true, 'provide city name'],
+        lowercase : true
     }
 
 })
