@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const ResturantRouter = require('./ResturantRoutes.js');
+const RestaurantRouter = require('./RestaurantRoutes.js');
 
 const app = express();
 app.use(express.json());
@@ -22,8 +22,8 @@ mongoose
     console.log('Error Mongodb connection');
 });
 
-app.use(ResturantRouter);
+app.use(RestaurantRouter);
 
-app.listen(8081, ()=> {
+app.listen(3000, ()=> {
     console.log('Server is running');
 });
