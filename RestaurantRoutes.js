@@ -38,7 +38,8 @@ app.get('/restaurants/cuisine/:name', async (req , res) => {
 app.get('/restaurants/:name', async (req , res) => {
 
   const cuisine = req.params.name;
-  const restaurants = await restaurantModel.find({cuisine: cuisine}).where({city :{ $ne: 'Brooklyn'}}).sort({name : 'ASC'});
+  const restaurants = await restaurantModel.find({cuisine: cuisine}).where({city :{ $ne: 'Brooklyn'}}).sort({name : 'ASC'})
+  .select("name cuisine city");
 
   try {
       res.status(200).send(restaurants);
